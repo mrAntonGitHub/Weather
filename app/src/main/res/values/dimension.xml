@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Height of the header on the main page -->
+    <dimen name="main_activity_header_height">320dp</dimen>
+    <dimen name="main_activity_header_expanded_height">620dp</dimen>
+
+    <!--  Daily car width and height (expanded and non-expanded)  -->
+    <dimen name="daily_weather_card_width">140dp</dimen>
+    <dimen name="daily_weather_card_height">110dp</dimen>
+    <dimen name="daily_weather_expanded_card_height">460dp</dimen>
+
+    <!--  Hourly car width and height (expanded and non-expanded)  -->
+    <dimen name="hourly_weather_card_height">80dp</dimen>
+    <dimen name="hourly_weather_expanded_card_height">265dp</dimen>
+
+</resources>

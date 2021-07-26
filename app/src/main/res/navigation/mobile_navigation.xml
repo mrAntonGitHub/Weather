@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.i.o.mob.dev.weather.ui.home.WeatherFragment"
+        android:label="WeatherFragment" >
+        <action
+            android:id="@+id/action_weatherFragment_to_chooseCityFragment"
+            app:destination="@id/chooseCityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCityFragment"
+        android:name="com.i.o.mob.dev.weather.ui.chooseCity.ChooseCityFragment"
+        android:label="ChooseCityFragment" >
+        <action
+            android:id="@+id/action_chooseCityFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.i.o.mob.dev.weather.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_chooseCityFragment"
+            app:destination="@id/chooseCityFragment" />
+    </fragment>
+</navigation>

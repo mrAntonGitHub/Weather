@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="reload">Обновить</string>
+
+
+    <!--  Header  -->
+    <string name="probability_of_precipitation">Вероятность осадков: %1$s&#65130;</string>
+    <string name="feels_like">По ощущениям: %1$s&#xb0;</string>
+    <string name="last_update">Обновлено: %1$s</string>
+    <string name="show_more"><u>Показать подробнее</u></string>
+    <string name="hide"><u>Скрыть</u></string>
+
+    <!--  Special signs  -->
+    <string name="degree_sign_end">%1$s&#xb0;</string>
+    <string name="percent_sign_end">%1$s&#65130;</string>
+    <string name="meter_sign_end">%1$s м.</string>
+    <string name="meter_pressure">%1$s мм.рт.ст.</string>
+    <string name="meter_per_second">%1$s м/c</string>
+    <string name="settings">Настройки</string>
+    <string name="time_end">%1$s ч.</string>
+
+    <!-- Search dialog -->
+    <string name="choose_city_fom_list_or_gps">Выберите город из списка или воспользуйтесь местоположением</string>
+    <string name="find_city">Найти город…</string>
+    <string name="back">Назад</string>
+
+    <string name="north">С &#x2191;</string>
+    <string name="south">Ю &#x2193;</string>
+    <string name="west">З &#x2190;</string>
+    <string name="east">В &#x2192;</string>
+    <string name="should_go_out">А стоит ли вообще выходить на улицу?</string>
+    <string name="read_news">Прочитай актуальные новости и реши!</string>
+    <string name="no_such_city">Такого города не найдено</string>
+    <string name="morning">Утро</string>
+    <string name="day">День</string>
+    <string name="evening">Вечер</string>
+    <string name="night">Ночь</string>
+    <string name="feels">Ощущается как</string>
+    <string name="humidity">Влажность</string>
+    <string name="press">Давление</string>
+    <string name="precipitation">Вероятность осадков</string>
+    <string name="cloud">Облачность</string>
+    <string name="wind">Ветер</string>
+    <string name="precip_volume">Количество осадков</string>
+    <string name="uv">UV</string>
+    <string name="cant_load">Чтобы увидеть данные о городе - выберите его и включите интернет</string>
+    <string name="visibility">Видимость</string>
+    <string name="wind_speed">Скорость ветра</string>
+    <string name="wind_direction">Направление ветра</string>
+    <string name="dew_point">Точка росы</string>
+
+</resources>

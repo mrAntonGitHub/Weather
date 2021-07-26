@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvDailyCard"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardBackgroundColor="@color/cardview_light_background"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:paddingBottom="6dp">
+
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivExpand"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="понедельник" />
+
+        <TextView
+            android:id="@+id/tvDayDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDay"
+            tools:text="20.08" />
+
+        <ImageView
+            android:id="@+id/ivExpand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_expand"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvDay"
+            app:layout_constraintTop_toTopOf="@id/tvDay"
+            app:tint="@color/black" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivDailyWeatherIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_weather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDayDate"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+
+        <TextView
+            android:id="@+id/tvDailyTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tvDailyTemperatureNight"
+            app:layout_constraintStart_toEndOf="@id/ivDailyWeatherIcon"
+            app:layout_constraintTop_toTopOf="@id/ivDailyWeatherIcon"
+            tools:text="17&#xb0;" />
+
+        <TextView
+            android:id="@+id/tvDailyTemperatureNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/ivDailyWeatherIcon"
+            app:layout_constraintTop_toBottomOf="@id/ivDailyWeatherIcon"
+            tools:text="Ночью: 17&#xb0;" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/expandedItems"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingTop="@dimen/daily_weather_card_height"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvDailyMorning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/morning"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/tvDailyAfternoon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivDailyMorningIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_few_clouds_day"
+                app:layout_constraintEnd_toEndOf="@+id/tvDailyMorning"
+                app:layout_constraintStart_toStartOf="@+id/tvDailyMorning"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyMorning"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/tvDailyMorningTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyMorning"
+                app:layout_constraintStart_toStartOf="@id/tvDailyMorning"
+                app:layout_constraintTop_toBottomOf="@id/ivDailyMorningIcon"
+                tools:text="12&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvDailyAfternoon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/day"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/tvDailyEvening"
+                app:layout_constraintStart_toEndOf="@id/tvDailyMorning"
+                app:layout_constraintTop_toTopOf="@id/tvDailyMorning" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivDailyAfternoonIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_few_clouds_day"
+                app:layout_constraintEnd_toEndOf="@+id/tvDailyAfternoon"
+                app:layout_constraintStart_toStartOf="@+id/tvDailyAfternoon"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyAfternoon"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/tvDailyAfternoonTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyAfternoon"
+                app:layout_constraintStart_toStartOf="@id/tvDailyAfternoon"
+                app:layout_constraintTop_toBottomOf="@id/ivDailyAfternoonIcon"
+                tools:text="14&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvDailyEvening"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/evening"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/tvDailyNight"
+                app:layout_constraintStart_toEndOf="@id/tvDailyAfternoon"
+                app:layout_constraintTop_toTopOf="@id/tvDailyMorning" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivDailyEveningIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_few_clouds_day"
+                app:layout_constraintEnd_toEndOf="@+id/tvDailyEvening"
+                app:layout_constraintStart_toStartOf="@+id/tvDailyEvening"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyEvening"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/tvDailyEveningTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyEvening"
+                app:layout_constraintStart_toStartOf="@id/tvDailyEvening"
+                app:layout_constraintTop_toBottomOf="@id/ivDailyEveningIcon"
+                tools:text="15&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvDailyNight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/night"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDailyEvening"
+                app:layout_constraintTop_toTopOf="@id/tvDailyMorning" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ivDailyNightIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_few_clouds_day"
+                app:layout_constraintEnd_toEndOf="@+id/tvDailyNight"
+                app:layout_constraintStart_toStartOf="@+id/tvDailyNight"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyNight"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:id="@+id/tvDailyNightTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyNight"
+                app:layout_constraintStart_toStartOf="@id/tvDailyNight"
+                app:layout_constraintTop_toBottomOf="@id/ivDailyNightIcon"
+                tools:text="11&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvDailyFeelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/feels"
+                android:textColor="@color/colorDarkGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyMorningTemperature" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/cardview_shadow_start_color"
+                app:layout_constraintBottom_toBottomOf="@id/tvDailyFeelsLike"
+                app:layout_constraintStart_toEndOf="@id/tvDailyFeelsLike"
+                app:layout_constraintTop_toTopOf="@id/tvDailyFeelsLike"
+                app:layout_constraintVertical_bias="0.6" />
+
+            <TextView
+                android:id="@+id/tvMorningTemperatureFeels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyMorning"
+                app:layout_constraintStart_toStartOf="@id/tvDailyMorning"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyFeelsLike"
+                tools:text="12&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvAfternoonTemperatureFeels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyAfternoon"
+                app:layout_constraintStart_toStartOf="@id/tvDailyAfternoon"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyFeelsLike"
+                tools:text="14&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvEveningTemperatureFeels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyEvening"
+                app:layout_constraintStart_toStartOf="@id/tvDailyEvening"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyFeelsLike"
+                tools:text="15&#xb0;" />
+
+            <TextView
+                android:id="@+id/tvNightTemperatureFeels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tvDailyNight"
+                app:layout_constraintStart_toStartOf="@id/tvDailyNight"
+                app:layout_constraintTop_toBottomOf="@id/tvDailyFeelsLike"
+                tools:text="11&#xb0;" />
+
+            <LinearLayout
+                android:id="@+id/llHumidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/llPressure"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMorningTemperatureFeels">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/humidity"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyHumidityValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="58&#65130;" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPressure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/llHumidity"
+                app:layout_constraintTop_toTopOf="@id/llHumidity">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/press"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyPressureValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="124 мм.рт.ст" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llProbabilityOfPrecipitation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/llPressure"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llHumidity">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precipitation"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyProbabilityOfPrecipitationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="56%" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llClouds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/llProbabilityOfPrecipitation"
+                app:layout_constraintTop_toTopOf="@id/llProbabilityOfPrecipitation">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cloud"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyCloudsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="43&#65130;" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llWind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/llPressure"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llProbabilityOfPrecipitation">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wind"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyWindValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="15 м/с" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPrecipitationVolume"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/llWind"
+                app:layout_constraintTop_toTopOf="@id/llWind">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precip_volume"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyPrecipitationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="20 мм." />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDewPoint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/llPressure"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llWind">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dew_point"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyDewPointValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="13.91" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llUVvi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/llDewPoint"
+                app:layout_constraintTop_toTopOf="@id/llDewPoint">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/uv"
+                    android:textColor="@color/colorDarkGrey" />
+
+                <TextView
+                    android:id="@+id/tvDailyUviValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@android:color/darker_gray"
+                    tools:text="4.57" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
